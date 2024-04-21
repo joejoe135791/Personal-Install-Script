@@ -1,0 +1,45 @@
+# start of script required info
+$isAdmin = [Security.Principal.WindowsIdentity]::GetCurrent().IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
+
+if (-not $isAdmin) {
+  Write-Error "This script requires administrator privileges. Please run as administrator and try again."
+  Exit
+} #lines 2-7 check if the user is running the program as an administrator
+# Check if Chocolatey installation directory exists
+if (-not (Test-Path -Path "$env:ProgramData\chocolatey")) {
+  Write-Warning "Chocolatey is not currently installed."
+  $installChocolatey = Read-Host -Prompt "Would you like to install Chocolatey now? [Y/n]"
+
+  if ($installChocolatey -eq 'y' -or $installChocolatey -eq 'Y') {
+    # Install Chocolatey (replace with actual installation command)
+    Write-Output "Installing Chocolatey..."
+    # You can use Invoke-Expression to run the official installation script from Chocolatey
+    Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+    # Follow on-screen instructions during installation
+
+  } else {
+    Write-Warning "Chocolatey installation skipped. This script requires Chocolatey for package management."
+    Exit
+  }
+}
+$Tab = [char]9 # Needed for A tab character
+# listing packages
+Write-Output "The following packages will be installed"
+Write-Output "$Tab epicgameslauncher,"
+Write-Output "$Tab steam," 
+Write-Output "$Tab googlechrome," 
+Write-Output "$Tab operagx"
+$continue = Read-Host -Prompt "Continue? [y/n]"
+
+if ( $continue -eq 'n' ) { 
+    Exit
+}
+Write-Output "Installation process initiated..." #If the user responded with y, the install starts
+Write-Output "Installing Epic Games Launcher"
+choco install epicgameslauncher
+Write-Output "Installing steam"
+choco install steam
+Write-Output "Installing Google Chrome"
+choco install googlechrome
+Write-Output "Installing OperaGX"
+choco install opera-gx
