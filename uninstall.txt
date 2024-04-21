@@ -1,1 +1,25 @@
-Not written yet
+# start of script required info
+$Tab = [char]9 # Needed for A tab character
+# listing packages
+Write-Output "The following packages will be uninstalled"
+Write-Output "$Tab epicgameslauncher,"
+Write-Output "$Tab steam," 
+Write-Output "$Tab googlechrome," 
+Write-Output "$Tab operagx"
+Write-warning "THIS ACTION IS IRREVERSIBLE"
+$continue = Read-Host -Prompt "Continue? [y/n]"
+
+if ( $continue -eq 'n' ) { 
+    Exit
+}
+Write-Output "Uninstalling programs..." #If the user responded with y, the it will uninstall
+Write-Output "removing Epic Games Launcher"
+choco uninstall epicgameslauncher -y
+Write-Output "removing steam"
+choco uninstall steam -y
+Write-Output "removing Google Chrome"
+choco uninstall googlechrome -y
+Write-Output "removing OperaGX"
+choco uninstall opera-gx -y
+Write-output "Programs have been uninstalled, Press 'Enter' to close"
+Pause
