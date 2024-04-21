@@ -43,3 +43,5 @@ Write-Output "Installing Google Chrome"
 choco install googlechrome
 Write-Output "Installing OperaGX"
 choco install opera-gx
+Write-output "Installation complete, Press 'Enter' to close"
+Pause
