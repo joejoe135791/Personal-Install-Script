@@ -23,6 +23,7 @@ All the software listed below will be downloaded using [chocolatey](https://comm
 - [Riot Games Launcher](https://playvalorant.com/en-us/)
 - [battle.net](https://us.shop.battle.net/en-us)
 - [Logitech G hub](https://www.logitechg.com/en-us/innovation/g-hub.html)
+
 I may add a way to install these in the future but no guarantees 
 
 # Licenses
