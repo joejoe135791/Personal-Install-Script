@@ -7,15 +7,14 @@ if (-not (Test-Path -Path "$env:ProgramData\chocolatey")) {
   if ($installChocolatey -eq 'y' -or $installChocolatey -eq 'Y') {
     # Install Chocolatey
     Write-Output "Installing Chocolatey..."
-    Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
-    # Follow on-screen instructions during installation
+    Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1')) # Chocolatey install script from their website
 
   } else {
     Write-Warning "Chocolatey installation skipped. This script requires Chocolatey for package management."
     Exit
   }
 }
-$Tab = [char]9 # Needed for A tab character
+$Tab = [char]9 # Needed for A tab character. Only used for formatting
 # listing packages
 Write-Output "The following packages will be installed"
 Write-Output "$Tab epicgameslauncher,"
@@ -36,5 +35,6 @@ Write-Output "Installing Google Chrome"
 choco install googlechrome -y --force --ignore-checksum
 Write-Output "Installing OperaGX"
 choco install opera-gx -y --force --ignore-checksum
+# Once script is finished, pauses in case of an error in the logs. Will add logging as an option later
 Write-output "Installation complete, Press 'Enter' to close"
 Pause
