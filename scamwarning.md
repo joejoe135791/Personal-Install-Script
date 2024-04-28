@@ -8,9 +8,15 @@ Run the command `certutil -hashfile <file> MD5` changing "\<file>" to the file n
 
 ## Hashes
 [installsoftware.ps1](installsoftware.ps1): `e20896bc6b19e5d523b4c26a6ca426f9`
+
 [installsoftware.txt](installsoftware.txt): `e20896bc6b19e5d523b4c26a6ca426f9`
+
 [test.ps1](test.ps1): `64914074cc39219f0862b8e7de18ae4c`
+
 [uninstall.ps1](uninstall.ps1): `8a66a1aa8d88b56402442e35845b53de`
+
 [uninstall.txt](uninstall.txt): `fd7f1d6fe8f63d8d234f55be9c3198c7`
+
 [checkmd5.ps1](checkmd5.ps1): `8b8803854c1073408cf531f57b1d22d8`
+
 [checkmd5.txt](checkmd5.txt): `8b8803854c1073408cf531f57b1d22d8`
