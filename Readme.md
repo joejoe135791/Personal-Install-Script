@@ -1,6 +1,5 @@
-# **DO NOT RUN THIS PROGRAM YET**
-## **This program is completely untested, I am currently in the process of testing it. If you choose to run the program, you are doing so at your own risk. I do not take responsibility if anything happens**
-### **I need to upload this to github for testing purposes**
+# **THIS PROGRAM COMES WITH ABSOLUTELY NO WARRANTY**
+## **This program is still being tested, If you choose to run the program, you understand thaat are doing so at your own risk. I do not take responsibility if anything happens**
 
 ** **
 # Software list for windows computers
@@ -10,7 +9,7 @@ This script will be completely open source and using open source software so tha
 
 There are 2 versions of a file, a .ps1 powershell script and a .txt text file. They are the exact same but the text file keeps you from accidentally running the file if you just wanted to see what it did. you can rename the .txt to .ps1 and vice versa
 
-All the software listed below will be downloaded using [chocolatey](https://community.chocolatey.org). A free and open source package manager for windows computers. Install chocolatey before running the install script
+All the software listed below will be downloaded using [chocolatey](https://community.chocolatey.org). A free and open source package manager for windows computers. Chocolatey should ask if you want to install it if its not installed but please download it from the official site if it fails
 
 # Software list
 - [Epic Games Store](community.chocolatey.org/packages/epicgameslauncher)
